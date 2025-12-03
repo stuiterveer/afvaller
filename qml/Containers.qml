@@ -43,6 +43,8 @@ Page {
             sourceItem: Image {
                 id: image
                 source: imageFile
+                width: units.gu(2.5)
+                height: units.gu(3)
             }
 
             MouseArea {
