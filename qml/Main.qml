@@ -5,7 +5,7 @@ import io.thp.pyotherside 1.4
 MainView {
     id: root
     objectName: 'mainView'
-    applicationName: 'rd4.stuiterveer'
+    applicationName: 'afvaller.stuiterveer'
     automaticOrientation: true
 
     width: units.gu(45)

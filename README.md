@@ -1,6 +1,6 @@
-# Rd4
+# Afvaller
 
-Unofficial Rd4 waste calendar for Ubuntu Touch
+View trash collection dates and container locations for Dutch municipalities, from Ubuntu Touch.
 
 ## License
 

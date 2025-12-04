@@ -1,12 +1,12 @@
 {
-    "name": "rd4.stuiterveer",
-    "description": "Unofficial Rd4 waste calendar for Ubuntu Touch",
+    "name": "afvaller.stuiterveer",
+    "description": "View trash collection dates and container locations for Dutch municipalities, from Ubuntu Touch",
     "architecture": "@CLICK_ARCH@",
-    "title": "Rd4",
+    "title": "Afvaller",
     "hooks": {
         "rd4": {
-            "apparmor": "rd4.apparmor",
-            "desktop":  "rd4.desktop"
+            "apparmor": "afvaller.apparmor",
+            "desktop":  "afvaller.desktop"
         }
     },
     "version": "0.5.6",

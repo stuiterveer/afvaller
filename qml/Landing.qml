@@ -7,7 +7,7 @@ Page {
 
     header: PageHeader {
         id: header
-        title: 'Rd4'
+        title: 'Afvaller'
     }
 
     Component {
