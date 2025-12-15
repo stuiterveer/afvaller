@@ -50,27 +50,4 @@ MainView {
         id: settings
         property alias address: root.address
     }
-
-    Python {
-        id: python
-
-        Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl('../src/'));
-            importModule('confighandler', function() {
-                console.log('module confighandler imported');
-            });
-
-            python.call('confighandler.initConfig')
-
-            python.call('confighandler.readConfig', [], function(returnValue) {
-                address['postalCode'] = returnValue['postalCode']
-                address['number'] = returnValue['houseNumber']
-                address['extension'] = returnValue['extension']
-            })
-        }
-
-        onError: {
-            console.log('python error: ' + traceback);
-        }
-    }
 }

@@ -1,16 +1,13 @@
 import urllib.request
 import urllib.error
 import json
-import confighandler
 from datetime import date
 
-config = confighandler.readConfig()
-
-def getCalendar():
-    params = '?postal_code=' + config['postalCode']
-    params += '&house_number=' + config['houseNumber']
-    if config['extension'] is not None:
-        params += '&house_number_extension=' + config['extension']
+def getCalendar(address):
+    params = '?postal_code=' + address['postalCode']
+    params += '&house_number=' + address['number']
+    if address['extension'] is not None:
+        params += '&house_number_extension=' + address['extension']
     params += '&year=2025'
     params += '&types[]=residual_waste'
     params += '&types[]=gft'
@@ -75,15 +72,3 @@ def getLocations():
     conn.close()
 
     return json.loads(returnData)['data']
-
-def saveAddress(postalCode, houseNumber, extension):
-    config['postalCode'] = postalCode
-    config['houseNumber'] = houseNumber
-    if extension == '':
-        config['extension'] = None
-    else:
-        config['extension'] = extension
-    confighandler.writeConfig(config)
-
-    calendar = getCalendar()
-    return calendar

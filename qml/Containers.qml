@@ -114,8 +114,8 @@ Page {
 
             containerModel.clear()
 
-            if (address['postalCode']) {
-                python.call('geocoding.postalToGeo', [], function(returnValue) {
+            if (root.address['postalCode']) {
+                python.call('geocoding.postalToGeo', [root.address], function(returnValue) {
                     map.center.latitude = returnValue['geometry']['coordinates'][1]
                     map.center.longitude = returnValue['geometry']['coordinates'][0]
                     map.zoomLevel = 18

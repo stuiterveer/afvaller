@@ -1,13 +1,10 @@
 import urllib.request
 import urllib.error
 import json
-import confighandler
 
-config = confighandler.readConfig()
-
-def postalToGeo():
+def postalToGeo(address):
     params = '?country=nl'
-    params += '&postalcode=' + config['postalCode']
+    params += '&postalcode=' + address['postalCode']
     params += '&format=geojson'
 
     url = 'https://nominatim.openstreetmap.org/search{}'.format(params)

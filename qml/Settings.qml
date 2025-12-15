@@ -58,39 +58,17 @@ Page {
             width: parent.width / 2
 
             onClicked: {
-                python.call('rd4.saveAddress', [postalcode.text, housenumber.text, numberextension.text])
-                address['postalCode'] = postalcode.text
-                address['number'] = housenumber.text
-                address['extension'] = numberextension.text
+                root.address['postalCode'] = postalcode.text != '' ? postalcode.text : null
+                root.address['number'] = housenumber.text != '' ? housenumber.text : null
+                root.address['extension'] = numberextension.text != '' ? numberextension.text : null
             }
         }
     }
 
-    Python {
-        id: python
-
-        Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl('../src/'));
-
-            importModule('rd4', function() {
-                console.log('module rd4 imported');
-            });
-
-            importModule('confighandler', function() {
-                console.log('module confighandler imported');
-            });
-
-            python.call('confighandler.initConfig')
-
-            python.call('confighandler.readConfig', [], function(returnValue) {
-                postalcode.text = address['postalCode']
-                housenumber.text = address['number']
-                numberextension.text = address['extension']
-            })
-        }
-
-        onError: {
-            console.log('python error: ' + traceback);
-        }
+    
+    Component.onCompleted: {
+        postalcode.text = root.address['postalCode']
+        housenumber.text = root.address['number']
+        numberextension.text = root.address['extension']
     }
 }
