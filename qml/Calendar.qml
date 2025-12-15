@@ -60,7 +60,7 @@ Page {
                 console.log('module rd4 imported');
             });
 
-            python.call('rd4.getCalendar', [root.address], function(returnValue) {
+            python.call('rd4.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension], function(returnValue) {
                 wasteModel.clear()
                 var currentIndex = 0
                 for (var i = 0; i < returnValue.length; i++)

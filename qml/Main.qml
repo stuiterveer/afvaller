@@ -12,11 +12,9 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    property var address: {
-        'postalCode': null,
-        'number': null,
-        'extension': null
-    }
+    property string addressPostalCode: null
+    property string addressNumber: null
+    property string addressExtension: null
 
     readonly property var trashLut: {
         'residual_waste': i18n.tr('Restafval'),
@@ -47,7 +45,9 @@ MainView {
     }
 
     Settings {
-        id: settings
-        property alias address: root.address
+        id: address
+        property alias postalCode: root.addressPostalCode
+        property alias number: root.addressNumber
+        property alias extension: root.addressExtension
     }
 }

@@ -58,17 +58,17 @@ Page {
             width: parent.width / 2
 
             onClicked: {
-                root.address['postalCode'] = postalcode.text != '' ? postalcode.text : null
-                root.address['number'] = housenumber.text != '' ? housenumber.text : null
-                root.address['extension'] = numberextension.text != '' ? numberextension.text : null
+                root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
+                root.addressNumber = housenumber.text != '' ? housenumber.text : null
+                root.addressExtension = numberextension.text != '' ? numberextension.text : null
             }
         }
     }
 
     
     Component.onCompleted: {
-        postalcode.text = root.address['postalCode']
-        housenumber.text = root.address['number']
-        numberextension.text = root.address['extension']
+        postalcode.text = root.addressPostalCode
+        housenumber.text = root.addressNumber
+        numberextension.text = root.addressExtension
     }
 }

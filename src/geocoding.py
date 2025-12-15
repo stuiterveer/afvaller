@@ -2,9 +2,9 @@ import urllib.request
 import urllib.error
 import json
 
-def postalToGeo(address):
+def postalToGeo(postalCode):
     params = '?country=nl'
-    params += '&postalcode=' + address['postalCode']
+    params += '&postalcode=' + postalCode
     params += '&format=geojson'
 
     url = 'https://nominatim.openstreetmap.org/search{}'.format(params)
