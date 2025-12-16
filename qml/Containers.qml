@@ -53,7 +53,7 @@ Page {
                     parent: marker
                     anchors.fill: parent
 
-                    onPressed: {
+                    onReleased: {
                         if (name != 'POSTALCODEMARKER')
                         {
                             containerInfo['name'] = name
