@@ -8,6 +8,21 @@ Page {
     header: PageHeader {
         id: header
         title: i18n.tr('Instellingen')
+
+        trailingActionBar.actions: [
+            Action {
+                iconName: 'ok'
+                text: i18n.tr('Opslaan')
+
+                onTriggered: {
+                    root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
+                    root.addressNumber = housenumber.text != '' ? housenumber.text : null
+                    root.addressExtension = numberextension.text != '' ? numberextension.text : null
+
+                    pageStack.pop('Settings.qml')
+                }
+            }
+        ]
     }
 
     Column {
@@ -50,20 +65,6 @@ Page {
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
-        }
-
-        Button {
-            id: saveSettings
-            text: i18n.tr('Opslaan')
-
-            height: units.gu(4)
-            width: parent.width / 2
-
-            onClicked: {
-                root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
-                root.addressNumber = housenumber.text != '' ? housenumber.text : null
-                root.addressExtension = numberextension.text != '' ? numberextension.text : null
-            }
         }
     }
     
