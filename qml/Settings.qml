@@ -35,6 +35,7 @@ Page {
         TextField {
             id: postalcode
             placeholderText: '1234 AB'
+            text: root.addressPostalCode
 
             inputMethodHints: Qt.ImhNoPredictiveText | (postalcode.length >= 4 ? Qt.ImhUppercaseOnly : Qt.ImhDigitsOnly)
             validator: RegExpValidator {
@@ -48,6 +49,7 @@ Page {
         TextField {
             id: housenumber
             placeholderText: '1'
+            text: root.addressNumber
 
             inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
             validator: IntValidator {
@@ -61,16 +63,11 @@ Page {
         TextField {
             id: numberextension
             placeholderText: 'A'
+            text: root.addressExtension
 
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
         }
-    }
-    
-    Component.onCompleted: {
-        postalcode.text = root.addressPostalCode
-        housenumber.text = root.addressNumber
-        numberextension.text = root.addressExtension
     }
 }
