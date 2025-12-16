@@ -21,7 +21,7 @@ Page {
             id: postalcode
             placeholderText: '1234 AB'
 
-            inputMethodHints: Qt.ImhNoPredictiveText
+            inputMethodHints: Qt.ImhNoPredictiveText | (postalcode.length >= 4 ? Qt.ImhUppercaseOnly : Qt.ImhDigitsOnly)
             validator: RegExpValidator {
                 regExp: /^\d{4} ?[a-zA-Z]{2}$/
             }
