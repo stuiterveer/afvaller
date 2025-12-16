@@ -12,9 +12,9 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
-    property string addressPostalCode: null
-    property string addressNumber: null
-    property string addressExtension: null
+    property string addressPostalCode: ''
+    property string addressNumber: ''
+    property string addressExtension: ''
 
     readonly property var trashLut: {
         'residual_waste': i18n.tr('Restafval'),
