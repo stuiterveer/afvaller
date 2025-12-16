@@ -21,8 +21,9 @@ Page {
             id: postalcode
             placeholderText: '1234 AB'
 
+            inputMethodHints: Qt.ImhNoPredictiveText
             validator: RegExpValidator {
-                regExp: /^\d{4} *[a-zA-Z]{2}$/
+                regExp: /^\d{4} ?[a-zA-Z]{2}$/
             }
 
             height: units.gu(4)
@@ -33,7 +34,7 @@ Page {
             id: housenumber
             placeholderText: '1'
 
-            inputMethodHints: Qt.ImhDigitsOnly
+            inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
             validator: IntValidator {
                 bottom: 1
             }
@@ -46,6 +47,7 @@ Page {
             id: numberextension
             placeholderText: 'A'
 
+            inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
         }
@@ -64,7 +66,6 @@ Page {
             }
         }
     }
-
     
     Component.onCompleted: {
         postalcode.text = root.addressPostalCode
