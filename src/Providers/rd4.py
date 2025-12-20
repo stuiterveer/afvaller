@@ -3,12 +3,12 @@ import urllib.error
 import json
 from datetime import date
 
-def getCalendar(postalCode, houseNumber, numberExtension):
+def getCalendar(postalCode, houseNumber, numberExtension, year):
     params = '?postal_code=' + postalCode
     params += '&house_number=' + houseNumber
     if numberExtension is not None:
         params += '&house_number_extension=' + numberExtension
-    params += '&year=2025'
+    params += '&year=' + str(year)
     params += '&types[]=residual_waste'
     params += '&types[]=gft'
     params += '&types[]=paper'
