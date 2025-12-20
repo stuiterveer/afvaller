@@ -19,7 +19,7 @@ MainView {
     property string addressPostalCode: ''
     property string addressNumber: ''
     property string addressExtension: ''
-    property string chosenProvider: 'Rd4'
+    property string chosenProvider: ''
 
     readonly property var trashLut: {
         'residual_waste': i18n.tr('Restafval'),
@@ -54,5 +54,6 @@ MainView {
         property alias postalCode: root.addressPostalCode
         property alias number: root.addressNumber
         property alias extension: root.addressExtension
+        property alias provider: root.chosenProvider
     }
 }
