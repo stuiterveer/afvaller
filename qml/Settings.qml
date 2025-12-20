@@ -30,7 +30,7 @@ Page {
 
         ListItem {
             height: txt.implicitHeight
-            width: txt.implicitWidth
+            width: parent.width
 
             divider {
                 visible: false
