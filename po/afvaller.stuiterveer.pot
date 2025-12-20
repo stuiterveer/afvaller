@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-16 10:27+0000\n"
+"POT-Creation-Date: 2025-12-20 21:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,31 +33,31 @@ msgstr ""
 msgid "Instellingen"
 msgstr ""
 
-#: ../qml/Main.qml:20
+#: ../qml/Main.qml:25
 msgid "Restafval"
 msgstr ""
 
-#: ../qml/Main.qml:21
+#: ../qml/Main.qml:26
 msgid "GFT"
 msgstr ""
 
-#: ../qml/Main.qml:22
+#: ../qml/Main.qml:27
 msgid "Papier"
 msgstr ""
 
-#: ../qml/Main.qml:23
+#: ../qml/Main.qml:28
 msgid "Snoeiafval"
 msgstr ""
 
-#: ../qml/Main.qml:24
+#: ../qml/Main.qml:29
 msgid "PMD"
 msgstr ""
 
-#: ../qml/Main.qml:25
+#: ../qml/Main.qml:30
 msgid "BEST-tas"
 msgstr ""
 
-#: ../qml/Main.qml:26
+#: ../qml/Main.qml:31
 msgid "Kerstbomen"
 msgstr ""
 

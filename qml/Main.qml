@@ -12,9 +12,14 @@ MainView {
     width: units.gu(45)
     height: units.gu(75)
 
+    property var providers: {
+        'Rd4': 'rd4'
+    }
+
     property string addressPostalCode: ''
     property string addressNumber: ''
     property string addressExtension: ''
+    property string chosenProvider: 'Rd4'
 
     readonly property var trashLut: {
         'residual_waste': i18n.tr('Restafval'),

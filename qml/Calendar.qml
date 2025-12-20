@@ -56,15 +56,15 @@ Page {
         Component.onCompleted: {
             addImportPath(Qt.resolvedUrl('../src/Providers/'));
 
-            importModule('rd4', function() {
-                console.log('module rd4 imported');
+            importModule(root.providers[root.chosenProvider], function() {
+                console.log('module ' + root.providers[root.chosenProvider] + ' imported');
             });
 
             var availableYears = [2025, 2026]
 
             wasteModel.clear()
             for (var y = 0; y < availableYears.length; y++){
-                python.call('rd4.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y]], function(returnValue) {
+                python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y]], function(returnValue) {
                     var currentIndex = 0
                     for (var i = 0; i < returnValue.length; i++)
                     {
