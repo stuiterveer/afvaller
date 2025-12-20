@@ -103,6 +103,7 @@ Page {
 
         Component.onCompleted: {
             addImportPath(Qt.resolvedUrl('../src/'));
+            addImportPath(Qt.resolvedUrl('../src/Providers/'));
 
             importModule('rd4', function() {
                 console.log('module rd4 imported');
