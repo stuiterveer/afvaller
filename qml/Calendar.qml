@@ -60,26 +60,30 @@ Page {
                 console.log('module rd4 imported');
             });
 
-            python.call('rd4.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, 2025], function(returnValue) {
-                wasteModel.clear()
-                var currentIndex = 0
-                for (var i = 0; i < returnValue.length; i++)
-                {
-                    var typesTrans = []
-                    for (var j = 0; j < returnValue[i]['types'].length; j++)
-                    {
-                        typesTrans.push(trashLut[returnValue[i]['types'][j]])
-                        if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
-                        {
-                            currentIndex = i
-                        }
-                    }
-                    returnValue[i]['typesString'] = typesTrans.join(', ')
-                    wasteModel.append(returnValue[i])
-                }
+            var availableYears = [2025, 2026]
 
-                trashView.positionViewAtIndex(currentIndex, ListView.Center)
-            })
+            wasteModel.clear()
+            for (var y = 0; y < availableYears.length; y++){
+                python.call('rd4.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y]], function(returnValue) {
+                    var currentIndex = 0
+                    for (var i = 0; i < returnValue.length; i++)
+                    {
+                        var typesTrans = []
+                        for (var j = 0; j < returnValue[i]['types'].length; j++)
+                        {
+                            typesTrans.push(trashLut[returnValue[i]['types'][j]])
+                            if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
+                            {
+                                currentIndex = i
+                            }
+                        }
+                        returnValue[i]['typesString'] = typesTrans.join(', ')
+                        wasteModel.append(returnValue[i])
+                    }
+
+                    trashView.positionViewAtIndex(currentIndex, ListView.Center)
+                })
+            }
         }
 
         onError: {
