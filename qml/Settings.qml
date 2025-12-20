@@ -25,6 +25,26 @@ Page {
         ]
     }
 
+    Component {
+        id: providerDelegate
+
+        ListItem {
+            height: txt.implicitHeight
+            width: txt.implicitWidth
+
+            divider {
+                visible: false
+            }
+
+            Label {
+                id: txt
+                text: name
+            }
+
+            onClicked: root.chosenProvider = txt.text
+        }
+    }
+
     Column {
         anchors {
             top: header.bottom
@@ -32,6 +52,28 @@ Page {
             left: parent.left
             right: parent.right
         }
+
+        ComboButton {
+            id: providerList
+            text: root.chosenProvider
+
+            ListView {
+                anchors {
+                    top: parent.top
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.bottom
+                }
+
+                id: providerView
+                
+                model: ListModel {
+                    id: providerModel
+                }
+                delegate: providerDelegate
+            }
+        }
+
         TextField {
             id: postalcode
             placeholderText: '1234 AB'
@@ -68,6 +110,14 @@ Page {
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
+        }
+    }
+
+    Component.onCompleted: {
+        providerModel.clear()
+        var providerList = Object.entries(root.providers)
+        for (var i = 0; i < providerList.length; i++) {
+            providerModel.append({'name': providerList[i][0]})
         }
     }
 }
