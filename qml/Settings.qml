@@ -7,6 +7,8 @@ Page {
 
     signal settingsChanged()
 
+    property int listItemHeight: units.gu(6)
+
     header: PageHeader {
         id: header
         title: i18n.tr('Instellingen')
@@ -33,15 +35,16 @@ Page {
         id: providerDelegate
 
         ListItem {
-            height: txt.implicitHeight
+            height: listItemHeight
             width: parent.width
 
             divider {
-                visible: false
+                visible: true
             }
 
             Label {
                 id: txt
+                anchors.verticalCenter: parent.verticalCenter
                 text: name
             }
 
@@ -62,6 +65,7 @@ Page {
 
         ComboButton {
             id: providerList
+            expandedHeight: collapsedHeight + (listItemHeight * providerModel.count)
             text: root.chosenProvider
 
             ListView {
