@@ -5,6 +5,8 @@ import io.thp.pyotherside 1.4
 Page {
     anchors.fill: parent
 
+    signal settingsChanged()
+
     header: PageHeader {
         id: header
         title: i18n.tr('Instellingen')
@@ -19,6 +21,7 @@ Page {
                     root.addressNumber = housenumber.text != '' ? housenumber.text : null
                     root.addressExtension = numberextension.text != '' ? numberextension.text : null
 
+                    settingsChanged()
                     pageStack.pop('Settings.qml')
                 }
             }
