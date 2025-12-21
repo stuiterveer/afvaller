@@ -50,12 +50,13 @@ Page {
     }
 
     function loadMenu() {
+        pageModel.clear()
+
         if (root.chosenProvider != '') {
             python.importModule(root.providers[root.chosenProvider], function() {
                 console.log('module ' + root.providers[root.chosenProvider] + ' imported');
             });
 
-            pageModel.clear()
             python.call(root.providers[root.chosenProvider] + '.getCapabilities', [], function(returnValue) {
                 if (returnValue.includes('calendar')) {
                     pageModel.append({
