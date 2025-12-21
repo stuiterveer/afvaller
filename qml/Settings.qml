@@ -20,6 +20,7 @@ Page {
                     root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
                     root.addressNumber = housenumber.text != '' ? housenumber.text : null
                     root.addressExtension = numberextension.text != '' ? numberextension.text : null
+                    root.chosenProvider = providerList.text != '' ? providerList.text : null
 
                     settingsChanged()
                     pageStack.pop('Settings.qml')
@@ -45,7 +46,7 @@ Page {
             }
 
             onClicked: {
-                root.chosenProvider = txt.text
+                providerList.text = txt.text
                 providerList.expanded = false
             }
         }
