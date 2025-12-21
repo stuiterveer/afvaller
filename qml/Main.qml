@@ -12,7 +12,8 @@ MainView {
     height: units.gu(75)
 
     property var providers: {
-        'Rd4': 'rd4'
+        'Rd4': 'rd4',
+        'ROVA': 'rova'
     }
 
     property string addressPostalCode: ''
