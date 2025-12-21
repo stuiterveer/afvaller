@@ -1,6 +1,5 @@
 import QtQuick 2.7
 import Lomiri.Components 1.3
-import io.thp.pyotherside 1.4
 import Qt.labs.settings 1.0
 
 MainView {
