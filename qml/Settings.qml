@@ -41,7 +41,10 @@ Page {
                 text: name
             }
 
-            onClicked: root.chosenProvider = txt.text
+            onClicked: {
+                root.chosenProvider = txt.text
+                providerList.expanded = false
+            }
         }
     }
 
