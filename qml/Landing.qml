@@ -52,6 +52,10 @@ Page {
     function loadMenu() {
         pageModel.clear()
 
+        if (!(root.chosenProvider in root.providers) && root.chosenProvider != '') {
+            root.chosenProvider = ''
+        }
+
         if (root.chosenProvider != '') {
             python.importModule(root.providers[root.chosenProvider], function() {
                 console.log('module ' + root.providers[root.chosenProvider] + ' imported');
