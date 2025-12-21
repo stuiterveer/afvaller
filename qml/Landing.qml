@@ -1,6 +1,7 @@
 import QtQuick 2.7
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import io.thp.pyotherside 1.4
 
 Page {
     anchors.fill: parent
@@ -35,29 +36,40 @@ Page {
             id: pageModel
         }
         delegate: pageDelegate
+    }
+
+    Python {
+        id: python
 
         Component.onCompleted: {
-            pageModel.clear()
+            addImportPath(Qt.resolvedUrl('../src/Providers/'));
 
-            var pages = [
-                {
-                    'name': i18n.tr('Afvalkalender'),
-                    'file': 'Calendar.qml'
-                },
-                {
-                    'name': i18n.tr('Afvalcontainers'),
-                    'file': 'Containers.qml'
-                },
-                {
-                    'name': i18n.tr('Instellingen'),
-                    'file': 'Settings.qml'
-                }
-            ]
+            if (root.chosenProvider != '') {
+                importModule(root.providers[root.chosenProvider], function() {
+                    console.log('module ' + root.providers[root.chosenProvider] + ' imported');
+                });
 
-            for (var i = 0; i < pages.length; i++)
-            {
-                pageModel.append(pages[i])
+                pageModel.clear()
+                python.call(root.providers[root.chosenProvider] + '.getCapabilities', [], function(returnValue) {
+                    if (returnValue.includes('calendar')) {
+                        pageModel.append({
+                            'name': i18n.tr('Afvalkalender'),
+                            'file': 'Calendar.qml'
+                        })
+                    }
+                    if (returnValue.includes('containers')) {
+                        pageModel.append({
+                            'name': i18n.tr('Afvalcontainers'),
+                            'file': 'Containers.qml'
+                        })
+                    }
+                })
             }
+
+            pageModel.append({
+                'name': i18n.tr('Instellingen'),
+                'file': 'Settings.qml'
+            })
         }
     }
 }

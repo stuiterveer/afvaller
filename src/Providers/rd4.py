@@ -3,6 +3,9 @@ import urllib.error
 import json
 from datetime import date
 
+def getCapabilities():
+    return ['calendar', 'containers']
+
 def getCalendar(postalCode, houseNumber, numberExtension, year):
     params = '?postal_code=' + postalCode
     params += '&house_number=' + houseNumber

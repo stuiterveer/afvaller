@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-20 21:13+0000\n"
+"POT-Creation-Date: 2025-12-21 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Calendar.qml:10 ../qml/Landing.qml:44
+#: ../qml/Calendar.qml:10 ../qml/Landing.qml:56
 msgid "Afvalkalender"
 msgstr ""
 
@@ -25,11 +25,11 @@ msgstr ""
 msgid "vandaag"
 msgstr ""
 
-#: ../qml/Containers.qml:12 ../qml/Landing.qml:48
+#: ../qml/Containers.qml:12 ../qml/Landing.qml:62
 msgid "Afvalcontainers"
 msgstr ""
 
-#: ../qml/Landing.qml:52 ../qml/Settings.qml:10
+#: ../qml/Landing.qml:70 ../qml/Settings.qml:10
 msgid "Instellingen"
 msgstr ""
 
