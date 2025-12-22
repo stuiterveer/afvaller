@@ -2,6 +2,10 @@
 
 View trash collection dates and container locations for Dutch municipalities, from Ubuntu Touch.
 
+## Adding a new provider
+
+If there's a waste processor that is not yet in the app, one can be added by following the instructions in `src/Providers/README.md`. Pull requests are welcomed!
+
 ## License
 
 Copyright (C) 2025  stuiterveer
