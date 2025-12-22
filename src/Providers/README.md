@@ -34,4 +34,12 @@ The function's return data should be an array, with each value in the array repr
 }
 ```
 
+Here's how each value in the object is formatted:
+- `date`: A string with the date formatted as `'YYYY-MM-DD'`.
+- `dateInfo`: A string representing when this date is compared to today's date, so that it can be shown in a specific way from within the app. It should have one of the following possible values:
+    - `'today'` if it falls on the same date as today.
+    - `'past'` if the date has already passed.
+    - `'future`' if the date is at any point in the future.
+- `types`: An array containing all trash types that are picked up on that day. This means that multiple pickups on the same day should be combined into the same object instead of providing multiple objects for the same date. The possible values are the keys of the `trashLut` variable in `qml/Main.qml`.
+
 Any additional data in this object will be disregarded.
