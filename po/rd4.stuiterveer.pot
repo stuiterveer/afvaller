@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rd4.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-24 10:42+0000\n"
+"POT-Creation-Date: 2025-12-22 10:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,50 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Calendar.qml:10 ../qml/Landing.qml:44
-msgid "Afvalkalender"
+#: ../qml/Main.qml:31
+msgid ""
+"Deze app zal niet meer niet meer onderhouden worden en is End Of Life.\n"
+"\n"
+"Er is een nieuwe app die meer afvalverwerkers zal ondersteunen en als "
+"vervanging van deze app dient.\n"
+"\n"
+"Klik op de knop om Afvaller te bekijken in de OpenStore en verwijder daarna "
+"de Rd4 app van je apparaat."
 msgstr ""
 
-#: ../qml/Calendar.qml:26
-msgid "vandaag"
-msgstr ""
-
-#: ../qml/Containers.qml:12 ../qml/Landing.qml:48
-msgid "Afvalcontainers"
-msgstr ""
-
-#: ../qml/Landing.qml:52 ../qml/Settings.qml:10
-msgid "Instellingen"
-msgstr ""
-
-#: ../qml/Main.qml:21
-msgid "Restafval"
-msgstr ""
-
-#: ../qml/Main.qml:22
-msgid "GFT"
-msgstr ""
-
-#: ../qml/Main.qml:23
-msgid "Papier"
-msgstr ""
-
-#: ../qml/Main.qml:24
-msgid "Snoeiafval"
-msgstr ""
-
-#: ../qml/Main.qml:25
-msgid "PMD"
-msgstr ""
-
-#: ../qml/Main.qml:26
-msgid "BEST-tas"
-msgstr ""
-
-#: ../qml/Main.qml:27
-msgid "Kerstbomen"
-msgstr ""
-
-#: ../qml/Settings.qml:55
-msgid "Opslaan"
+#: ../qml/Main.qml:42
+msgid "Download Afvaller in de OpenStore"
 msgstr ""
