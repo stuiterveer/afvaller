@@ -1,5 +1,6 @@
 import QtQuick 2.7
 import Lomiri.Components 1.3
+import QtQml 2.12
 import io.thp.pyotherside 1.4
 
 MainView {
@@ -40,6 +41,7 @@ MainView {
             color: theme.name === 'Lomiri.Components.Themes.SuruDark' ? 'Light Green' : 'Green'
             id: openAppStore
             text: i18n.tr('Download Afvaller in de OpenStore')
+            onClicked: Qt.openUrlExternally('https://open-store.io/app/afvaller.stuiterveer')
         }
     }
 }
