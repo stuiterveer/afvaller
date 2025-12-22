@@ -1,5 +1,5 @@
 # Purpose of this directory
-This directory holds all the logic for the definition of external waste processors. If you want to add ned ones, this is where you add one.
+This directory holds all the logic for the definition of external waste processors. If you want to add new ones, this is where you add one.
 
 # Creating a new provider
 1. Create a new python file in this directory for the provider you want to add.
