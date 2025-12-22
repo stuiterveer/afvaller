@@ -44,4 +44,18 @@ MainView {
             onClicked: Qt.openUrlExternally('https://open-store.io/app/afvaller.stuiterveer')
         }
     }
+
+    Python {
+        id: python
+
+        Component.onCompleted: {
+            addImportPath(Qt.resolvedUrl('../src/'));
+
+            importModule('purger', function() {
+                console.log('module purger imported');
+            });
+
+            python.call('purger.purgeConfig')
+        }
+    }
 }

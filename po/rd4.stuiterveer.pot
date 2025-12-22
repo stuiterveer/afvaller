@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rd4.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-22 10:35+0000\n"
+"POT-Creation-Date: 2025-12-22 10:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Main.qml:31
+#: ../qml/Main.qml:32
 msgid ""
 "Deze app zal niet meer niet meer onderhouden worden en is End Of Life.\n"
 "\n"
@@ -28,6 +28,6 @@ msgid ""
 "de Rd4 app van je apparaat."
 msgstr ""
 
-#: ../qml/Main.qml:42
+#: ../qml/Main.qml:43
 msgid "Download Afvaller in de OpenStore"
 msgstr ""
