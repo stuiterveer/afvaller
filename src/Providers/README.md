@@ -6,7 +6,7 @@ This directory holds all the logic for the definition of external waste processo
 2. Open `qml/Main.qml` and edit the `providers` variable so this file is added to it:
     - The key of the new entry should contain the identifiable name of the waste processor and will be shown like that to the user.
     - The value of the new entry should hold the name of the python file, without the extension.
-    - For example, if you want to create a new provider for a waste processor called "EX1" and created a file called `example.py` for it, add the following value to the `providers` object: `'EX1: 'example'`.
+    - For example, if you want to create a new provider for a waste processor called "EX1" and created a file called `example.py` for it, add the following value to the `providers` object: `'EX1': 'example'`.
 3. In your new script:
     1. Add a function called `getCapabilities()` that returns an array containing all features are supported by this provider. Possible values in this array:
         - `'calendar'` for the waste calendar.
