@@ -4,7 +4,7 @@
     "architecture": "@CLICK_ARCH@",
     "title": "Afvaller",
     "hooks": {
-        "rd4": {
+        "afvaller": {
             "apparmor": "afvaller.apparmor",
             "desktop":  "afvaller.desktop"
         }
