@@ -10,7 +10,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
     params = '?postalcode=' + postalCode
     params += '&houseNumber=' + houseNumber
     params += '&addition=' + (numberExtension if numberExtension is not None else '')
-    params += '&year=' + str(year)
+    params += '&year=' + year
     
     url = 'https://rova.nl/api/waste-calendar/year{}'.format(params)
     url = url.replace(" ", "%20")
@@ -29,7 +29,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
     while i >= 0:
         data[i]['date'] = data[i]['date'].split('T')[0]
         dateArr = data[i]['date'].split('-')
-        if str(dateArr[0]) == str(year):
+        if dateArr[0] == year:
             collectionDate = date(int(dateArr[0]), int(dateArr[1]), int(dateArr[2]))
 
             if collectionDate < today:

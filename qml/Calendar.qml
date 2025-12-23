@@ -60,12 +60,15 @@ Page {
                 console.log('module ' + root.providers[root.chosenProvider] + ' imported');
             });
 
-            var availableYears = [2025, 2026]
+            var d = new Date()
+            var currentYear = d.getFullYear()
+
+            var availableYears = [currentYear, currentYear + 1]
             var currentIndex = 0
 
             wasteModel.clear()
             for (var y = 0; y < availableYears.length; y++){
-                python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y]], function(returnValue) {
+                python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
                     for (var i = 0; i < returnValue.length; i++)
                     {
                         var typesTrans = []
