@@ -63,3 +63,6 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
 def getYears():
     currentYear = datetime.now().year
     return [currentYear, currentYear + 1]
+
+def validateAddress(postalCode, houseNumber, numberExtension):
+    return True

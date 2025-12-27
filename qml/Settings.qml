@@ -19,13 +19,17 @@ Page {
                 text: i18n.tr('Opslaan')
 
                 onTriggered: {
-                    root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
-                    root.addressNumber = housenumber.text != '' ? housenumber.text : null
-                    root.addressExtension = numberextension.text != '' ? numberextension.text : null
-                    root.chosenProvider = providerList.text != '' ? providerList.text : null
+                    python.call(root.providers[root.chosenProvider] + '.validateAddress', [postalcode.text, housenumber.text, (numberextension.text != '' ? numberextension.text : null)], function(addressValid) {
+                        if (addressValid) {
+                            root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
+                            root.addressNumber = housenumber.text != '' ? housenumber.text : null
+                            root.addressExtension = numberextension.text != '' ? numberextension.text : null
+                            root.chosenProvider = providerList.text != '' ? providerList.text : null
 
-                    settingsChanged()
-                    pageStack.pop('Settings.qml')
+                            settingsChanged()
+                            pageStack.pop('Settings.qml')
+                        }
+                    })
                 }
             }
         ]
@@ -129,6 +133,22 @@ Page {
         var providerList = Object.entries(root.providers)
         for (var i = 0; i < providerList.length; i++) {
             providerModel.append({'name': providerList[i][0]})
+        }
+    }
+
+    Python {
+        id: python
+
+        Component.onCompleted: {
+            addImportPath(Qt.resolvedUrl('../src/Providers/'));
+
+            importModule(root.providers[root.chosenProvider], function() {
+                console.log('module ' + root.providers[root.chosenProvider] + ' imported');
+            });
+        }
+
+        onError: {
+            console.log('python error: ' + traceback);
         }
     }
 }
