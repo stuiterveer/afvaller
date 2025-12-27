@@ -21,6 +21,13 @@ The function's return data should be an array, with any combination of the follo
 * `'calendar'`: Return this value if the waste processor supports showing a waste calendar.
 * `'containers'`: Return this value if the waste processor supports showing the locations of underground containers.
 
+## getYears()
+**Only required if the provider has the `calendar` capability.**
+### Arguments
+None.
+### Return value
+The functions return data show be an array of all the years that it can get a calendar for. The years should be integers.
+
 ## getCalendar()
 **Only required if the provider has the `calendar` capability.**
 ### Arguments
