@@ -40,6 +40,8 @@ MainView {
         'wasteTypes': []
     }
 
+    property var providerData: {}
+
     PageStack {
         id: pageStack
         anchors.fill: parent
@@ -55,5 +57,6 @@ MainView {
         property alias number: root.addressNumber
         property alias extension: root.addressExtension
         property alias provider: root.chosenProvider
+        property alias providerData: root.providerData
     }
 }
