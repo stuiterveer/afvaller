@@ -32,7 +32,7 @@ The functions return data show be an array of all the years that it can get a ca
 **Only required if the provider has the `calendar` capability.**
 ### Arguments
 The app will call this function with the following arguments in the following order:
-- **Postal code**: This is a string, which can be passed with or without spaces, and with or without capital letters. It's upp to the provider to parse this correctly if needed by the waste processor.
+- **Postal code**: This is a string, which can be passed with or without spaces, and with or without capital letters. It's up to the provider to parse this correctly if needed by the waste processor.
 - **House number**: This is a string, and contains the house number *without* any extension.
 - **Extension**: This is a string, and contains the extension for the house number if applicable. If this is not provided, then it will be `None`.
 - **Year**: This is a string, and specifies for which year the calendar is requested. Only the data for that specified year should be returned, other data should be filtered out.
