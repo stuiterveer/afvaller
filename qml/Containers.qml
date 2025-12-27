@@ -134,7 +134,7 @@ Page {
                 })
             }
 
-            python.call('rd4.getLocations', [], function(returnValue) {
+            python.call(root.providers[root.chosenProvider] + '.getLocations', [], function(returnValue) {
                 for (var i = 0; i < returnValue.length; i++)
                 {
                     returnValue[i]['imageFile'] = '../assets/marker_red.png'
