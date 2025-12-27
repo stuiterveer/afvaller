@@ -63,30 +63,31 @@ Page {
             var d = new Date()
             var currentYear = d.getFullYear()
 
-            var availableYears = [currentYear, currentYear + 1]
-            var currentIndex = 0
+            python.call(root.providers[root.chosenProvider] + '.getYears', [], function(availableYears) {
+                var currentIndex = 0
 
-            wasteModel.clear()
-            for (var y = 0; y < availableYears.length; y++){
-                python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
-                    for (var i = 0; i < returnValue.length; i++)
-                    {
-                        var typesTrans = []
-                        for (var j = 0; j < returnValue[i]['types'].length; j++)
+                wasteModel.clear()
+                for (var y = 0; y < availableYears.length; y++){
+                    python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
+                        for (var i = 0; i < returnValue.length; i++)
                         {
-                            typesTrans.push(trashLut[returnValue[i]['types'][j]])
-                            if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
+                            var typesTrans = []
+                            for (var j = 0; j < returnValue[i]['types'].length; j++)
                             {
-                                currentIndex = i
+                                typesTrans.push(trashLut[returnValue[i]['types'][j]])
+                                if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
+                                {
+                                    currentIndex = i
+                                }
                             }
+                            returnValue[i]['typesString'] = typesTrans.join(', ')
+                            wasteModel.append(returnValue[i])
                         }
-                        returnValue[i]['typesString'] = typesTrans.join(', ')
-                        wasteModel.append(returnValue[i])
-                    }
 
-                    trashView.positionViewAtIndex(currentIndex, ListView.Center)
-                })
-            }
+                        trashView.positionViewAtIndex(currentIndex, ListView.Center)
+                    })
+                }
+            })
         }
 
         onError: {

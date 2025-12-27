@@ -1,7 +1,7 @@
 import urllib.request
 import urllib.error
 import json
-from datetime import date
+from datetime import date, datetime
 
 def getCapabilities():
     return ['calendar']
@@ -59,3 +59,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
         i -= 1
 
     return data
+
+def getYears():
+    currentYear = datetime.now().year
+    return [currentYear, currentYear + 1]

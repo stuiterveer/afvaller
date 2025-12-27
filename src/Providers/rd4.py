@@ -1,7 +1,7 @@
 import urllib.request
 import urllib.error
 import json
-from datetime import date
+from datetime import date, datetime
 
 def getCapabilities():
     return ['calendar', 'containers']
@@ -75,3 +75,7 @@ def getLocations():
     conn.close()
 
     return json.loads(returnData)['data']
+
+def getYears():
+    currentYear = datetime.now().year
+    return [currentYear, currentYear + 1]
