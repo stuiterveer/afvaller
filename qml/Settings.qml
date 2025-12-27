@@ -28,6 +28,8 @@ Page {
 
                             settingsChanged()
                             pageStack.pop('Settings.qml')
+                        } else {
+                            addressInvalidError.visible = true
                         }
                     })
                 }
@@ -125,6 +127,18 @@ Page {
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
+        }
+
+        Label {
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            id: addressInvalidError
+            wrapMode: Text.WordWrap
+            visible: false
+            color: theme.name === 'Lomiri.Components.Themes.SuruDark' ? '#ED3146' : '#C7162B'
+            text: i18n.tr('Adres wordt niet herkend door %1.\nControleer of het adres en de gekozen afvalverwerker juist zijn.').arg(providerList.text)
         }
     }
 

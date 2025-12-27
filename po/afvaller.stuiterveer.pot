@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-21 20:09+0000\n"
+"POT-Creation-Date: 2025-12-27 23:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,4 +63,10 @@ msgstr ""
 
 #: ../qml/Settings.qml:19
 msgid "Opslaan"
+msgstr ""
+
+#: ../qml/Settings.qml:141
+msgid ""
+"Adres wordt niet herkend door %1.\n"
+"Controleer of het adres en de gekozen afvalverwerker juist zijn."
 msgstr ""
