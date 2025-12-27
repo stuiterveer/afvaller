@@ -21,12 +21,22 @@ The function's return data should be an array, with any combination of the follo
 * `'calendar'`: Return this value if the waste processor supports showing a waste calendar.
 * `'containers'`: Return this value if the waste processor supports showing the locations of underground containers.
 
+## validateAddress()
+### Arguments
+The app will call this function with the following arguments in the following order:
+- **Postal code**: This is a string, which can be passed with or without spaces, and with or without capital letters. It's up to the provider to parse this correctly if needed by the waste processor.
+- **House number**: This is a string, and contains the house number *without* any extension.
+- **Extension**: This is a string, and contains the extension for the house number if applicable. If this is not provided, then it will be `None`.
+
+### Return value
+The functions return value should be a boolean. `True` if the address is valid for this waste processor, `False` if the address is not valid for this waste processor. "Not valid" can mean either an invalid address, or a valid address but not served by this waste processor.
+
 ## getYears()
 **Only required if the provider has the `calendar` capability.**
 ### Arguments
 None.
 ### Return value
-The functions return data show be an array of all the years that it can get a calendar for. The years should be integers.
+The function's return data show be an array of all the years that it can get a calendar for. The years should be integers.
 
 ## getCalendar()
 **Only required if the provider has the `calendar` capability.**
