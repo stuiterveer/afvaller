@@ -19,7 +19,10 @@ Page {
                 text: i18n.tr('Opslaan')
 
                 onTriggered: {
-                    python.call(root.providers[root.chosenProvider] + '.validateAddress', [postalcode.text, housenumber.text, (numberextension.text != '' ? numberextension.text : null)], function(addressValid) {
+                    python.importModule(root.providers[providerList.text], function() {
+                        console.log('module ' + root.providers[providerList.text] + ' imported');
+                    });
+                    python.call(root.providers[providerList.text] + '.validateAddress', [postalcode.text, housenumber.text, (numberextension.text != '' ? numberextension.text : null)], function(addressValid) {
                         if (addressValid) {
                             root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
                             root.addressNumber = housenumber.text != '' ? housenumber.text : null
