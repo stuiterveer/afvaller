@@ -19,9 +19,6 @@ Page {
                 text: i18n.tr('Opslaan')
 
                 onTriggered: {
-                    python.importModule(root.providers[providerList.text], function() {
-                        console.log('module ' + root.providers[providerList.text] + ' imported');
-                    });
                     python.call(root.providers[providerList.text] + '.validateAddress', [postalcode.text, housenumber.text, (numberextension.text != '' ? numberextension.text : null)], function(addressValid) {
                         if (addressValid) {
                             root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
@@ -58,6 +55,10 @@ Page {
             }
 
             onClicked: {
+                python.importModule(root.providers[providerList.text], function() {
+                    console.log('module ' + root.providers[providerList.text] + ' imported');
+                });
+
                 addressInvalidError.visible = false
                 providerList.text = txt.text
                 providerList.expanded = false
