@@ -55,8 +55,8 @@ Page {
             }
 
             onClicked: {
-                python.importModule(root.providers[providerList.text], function() {
-                    console.log('module ' + root.providers[providerList.text] + ' imported');
+                python.importModule(root.providers[txt.text], function() {
+                    console.log('module ' + root.providers[txt.text] + ' imported');
                 });
 
                 addressInvalidError.visible = false
