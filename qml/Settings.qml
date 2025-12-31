@@ -55,6 +55,7 @@ Page {
             }
 
             onClicked: {
+                addressInvalidError.visible = false
                 providerList.text = txt.text
                 providerList.expanded = false
             }
@@ -103,6 +104,8 @@ Page {
 
             height: units.gu(4)
             width: parent.width / 4
+
+            onTextChanged: addressInvalidError.visible = false
         }
 
         TextField {
@@ -117,6 +120,8 @@ Page {
 
             height: units.gu(4)
             width: parent.width / 8
+
+            onTextChanged: addressInvalidError.visible = false
         }
 
         TextField {
@@ -127,6 +132,8 @@ Page {
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
             width: parent.width / 8
+
+            onTextChanged: addressInvalidError.visible = false
         }
 
         Label {

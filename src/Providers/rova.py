@@ -65,4 +65,4 @@ def getYears():
     return [currentYear, currentYear + 1]
 
 def validateAddress(postalCode, houseNumber, numberExtension):
-    return True
+    return False
