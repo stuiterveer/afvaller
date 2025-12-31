@@ -78,7 +78,12 @@ def getLocations():
 
 def getYears():
     currentYear = datetime.now().year
-    return [currentYear, currentYear + 1]
+    data = [currentYear]
+
+    if datetime.now().month == 12:
+        data.append(currentYear + 1)
+
+    return data
 
 def validateAddress(postalCode, houseNumber, numberExtension):
     params = '?postal_code=' + postalCode
