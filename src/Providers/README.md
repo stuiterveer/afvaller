@@ -36,7 +36,7 @@ The functions return value should be a boolean. `True` if the address is valid f
 ### Arguments
 None.
 ### Return value
-The function's return data show be an array of all the years that it can get a calendar for. The years should be integers.
+The function's return data show be an array of all the years that it can get a calendar for. The years should be integers and should never be hardcoded (to prevent the app needing an update at least once a year just for updating the available years).
 
 ## getCalendar()
 **Only required if the provider has the `calendar` capability.**
