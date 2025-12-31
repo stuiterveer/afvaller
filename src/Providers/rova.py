@@ -65,4 +65,16 @@ def getYears():
     return [currentYear, currentYear + 1]
 
 def validateAddress(postalCode, houseNumber, numberExtension):
+    params = '?postalCode=' + postalCode
+    params += '&housenumber=' + houseNumber
+    params += '&addition=' + (numberExtension if numberExtension is not None else '')
+
+    url = 'https://rova.nl/api/address{}'.format(params)
+    url = url.replace(" ", "%20")
+
+    try:
+        conn = urllib.request.urlopen(url)
+    except urllib.error.HTTPError as err:
+        return False
+
     return True
