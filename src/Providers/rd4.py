@@ -81,4 +81,31 @@ def getYears():
     return [currentYear, currentYear + 1]
 
 def validateAddress(postalCode, houseNumber, numberExtension):
-    return True
+    params = '?postal_code=' + postalCode
+    params += '&house_number=' + houseNumber
+
+    url = 'https://data.rd4.nl/api/v1/addresses/extensions{}'.format(params)
+    url = url.replace(" ", "%20")
+
+    try:
+        conn = urllib.request.urlopen(url)
+    except urllib.error.HTTPError as err:
+        return False
+    returnData = conn.read()
+    conn.close()
+
+    returnDataJson = json.loads(returnData)
+
+    if returnDataJson['success'] == True and returnDataJson['code'] == 0:
+        extensionMatch = False
+        for x in returnDataJson['data']:
+            if x is None:
+                if x == numberExtension:
+                    extensionMatch = True
+            else:
+                if numberExtension is not None:
+                    if x.upper() == numberExtension.upper():
+                        extensionMatch = True
+        return extensionMatch
+    else:
+        return False
