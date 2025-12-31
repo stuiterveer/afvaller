@@ -12,6 +12,7 @@ MainView {
     height: units.gu(75)
 
     property var providers: {
+        'De Afvalwijzer': 'mijnafvalwijzer',
         'Rd4': 'rd4',
         'ROVA': 'rova'
     }
