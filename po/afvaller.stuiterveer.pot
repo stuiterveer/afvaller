@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-31 22:30+0000\n"
+"POT-Creation-Date: 2026-01-03 22:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,10 @@ msgstr ""
 
 #: ../qml/Calendar.qml:26
 msgid "vandaag"
+msgstr ""
+
+#: ../qml/Calendar.qml:82
+msgid "Onbekend (%1)"
 msgstr ""
 
 #: ../qml/Containers.qml:12 ../qml/Landing.qml:73
@@ -59,6 +63,18 @@ msgstr ""
 
 #: ../qml/Main.qml:32
 msgid "Kerstbomen"
+msgstr ""
+
+#: ../qml/Main.qml:33
+msgid "Plastic"
+msgstr ""
+
+#: ../qml/Main.qml:34
+msgid "Metaal en Drankverpakkingen"
+msgstr ""
+
+#: ../qml/Main.qml:35
+msgid "Droge herbruikbare materialen"
 msgstr ""
 
 #: ../qml/Settings.qml:19

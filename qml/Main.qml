@@ -29,7 +29,10 @@ MainView {
         'pruning_waste': i18n.tr('Snoeiafval'),
         'pmd': i18n.tr('PMD'),
         'best_bag': i18n.tr('BEST-tas'),
-        'christmas_trees': i18n.tr('Kerstbomen')
+        'christmas_trees': i18n.tr('Kerstbomen'),
+        'plastic': i18n.tr('Plastic'),
+        'md': i18n.tr('Metaal en Drankverpakkingen'),
+        'dry_recyclables': i18n.tr('Droge herbruikbare materialen')
     }
 
     property var containerInfo: {

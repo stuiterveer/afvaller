@@ -63,6 +63,11 @@ add_custom_target(${DESKTOP_FILE_NAME} ALL
     COMMAND sed -i 's/${PROJECT_NAME}-//g' ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME}
 )
 
+add_custom_target(install_bs4 ALL
+    COMMENT "Installing bs4 dependency"
+    COMMAND pip3 install -U --target install/src/Providers/ bs4
+)
+
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME} DESTINATION ${DATA_DIR})
 
 add_subdirectory(po)

@@ -1,3 +1,5 @@
 clickable_minimum_required: 8.0.0
 builder: pure-qml-cmake
 kill: qmlscene
+dependencies_target:
+  - python3-pip
