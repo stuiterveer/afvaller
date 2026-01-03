@@ -3,11 +3,6 @@ import urllib.error
 import json
 from datetime import date, datetime
 
-#import os, sys
-#here = os.path.abspath(os.path.dirname(__file__))
-#vendored = os.path.join(here, '..', 'vendored')
-#sys.path.insert(0, vendored)
-
 from bs4 import BeautifulSoup
 
 def getCapabilities():
@@ -39,7 +34,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
     returnData = conn.read()
     conn.close()
 
-    parser = bs4.BeautifulSoup(returnData, 'html.parser')
+    parser = BeautifulSoup(returnData, 'html.parser')
 
     trashCollection = parser.find_all(class_='ophaaldagen')[1].find_all(class_='wasteInfoIcon')
 
