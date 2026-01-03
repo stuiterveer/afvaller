@@ -69,12 +69,18 @@ Page {
                 wasteModel.clear()
                 for (var y = 0; y < availableYears.length; y++){
                     python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
+                        //console.log(returnValue)
                         for (var i = 0; i < returnValue.length; i++)
                         {
                             var typesTrans = []
                             for (var j = 0; j < returnValue[i]['types'].length; j++)
                             {
-                                typesTrans.push(trashLut[returnValue[i]['types'][j]])
+                                if (returnValue[i]['types'][j] in trashLut){
+                                    typesTrans.push(trashLut[returnValue[i]['types'][j]])
+                                } else {
+                                    // Should not happen, but show unknown values to user for debugging and so it can still be added
+                                    typesTrans.push(i18n.tr('Onbekend (%1)').arg(returnValue[i]['types'][j]))
+                                }
                                 if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
                                 {
                                     currentIndex = i
