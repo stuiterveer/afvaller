@@ -71,6 +71,8 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             dataPoint['types'] = ['pruning_waste']
         elif trashData[1].string == 'Droge herbruikbare materialen':
             dataPoint['types'] = ['dry_recyclables']
+        elif trashData[1].string == 'Plastic, Metalen en Drankkartons':
+            dataPoint['types'] = ['pmd']
         else:
             dataPoint['types'] = [trashData[1].string]
 
