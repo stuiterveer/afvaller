@@ -19,6 +19,12 @@ Page {
                 text: i18n.tr('Opslaan')
 
                 onTriggered: {
+                    enabled = false
+                    providerList.enabled = false
+                    postalcode.enabled = false
+                    housenumber.enabled = false
+                    numberextension.enabled = false
+
                     python.call(root.providers[providerList.text] + '.validateAddress', [postalcode.text, housenumber.text, (numberextension.text != '' ? numberextension.text : null)], function(addressValid) {
                         if (addressValid) {
                             root.addressPostalCode = postalcode.text != '' ? postalcode.text : null
@@ -29,6 +35,12 @@ Page {
                             settingsChanged()
                             pageStack.pop('Settings.qml')
                         } else {
+                            enabled = true
+                            providerList.enabled = true
+                            postalcode.enabled = true
+                            housenumber.enabled = true
+                            numberextension.enabled = true
+
                             addressInvalidError.visible = true
                         }
                     })
