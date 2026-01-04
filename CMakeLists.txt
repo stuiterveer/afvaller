@@ -66,6 +66,9 @@ add_custom_target(${DESKTOP_FILE_NAME} ALL
 add_custom_target(install_bs4 ALL
     COMMENT "Installing bs4 dependency"
     COMMAND pip3 install -U --target install/src/Providers/ bs4
+    COMMENT "Removing unneeded items"
+    COMMAND rm -rf install/src/Providers/*.dist-info
+    COMMAND rm -rf install/src/Providers/__pycache__
 )
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME} DESTINATION ${DATA_DIR})
