@@ -31,7 +31,7 @@ MainView {
         'best_bag': i18n.tr('BEST-tas'),
         'christmas_trees': i18n.tr('Kerstbomen'),
         'plastic': i18n.tr('Plastic'),
-        'md': i18n.tr('Metaal en Drankverpakkingen'),
+        'md': i18n.tr('Metalen en Drankkartons'),
         'dry_recyclables': i18n.tr('Droge herbruikbare materialen')
     }
 
