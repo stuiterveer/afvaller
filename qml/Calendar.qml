@@ -50,6 +50,24 @@ Page {
         delegate: wasteDelegate
     }
 
+    Label {
+        anchors {
+            top: header.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+        }
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+
+        id: fetchingData
+
+        text: i18n.tr('Bezig met ophalen van data...')
+        textSize: Label.XLarge
+        wrapMode: Text.WordWrap
+
+    }
+
     Python {
         id: python
 
@@ -69,7 +87,6 @@ Page {
                 wasteModel.clear()
                 for (var y = 0; y < availableYears.length; y++){
                     python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
-                        //console.log(returnValue)
                         for (var i = 0; i < returnValue.length; i++)
                         {
                             var typesTrans = []
@@ -91,6 +108,8 @@ Page {
                         }
 
                         trashView.positionViewAtIndex(currentIndex, ListView.Center)
+
+                        fetchingData.visible = false
                     })
                 }
             })
