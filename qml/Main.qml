@@ -33,6 +33,7 @@ MainView {
         'plastic': i18n.tr('Plastic'),
         'md': i18n.tr('Metalen en Drankkartons'),
         'dry_recyclables': i18n.tr('Droge herbruikbare materialen'),
+        'bulky_waste': i18n.tr('Grofvuil'),
         'textiles': i18n.tr('Textiel')
     }
 
