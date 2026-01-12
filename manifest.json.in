@@ -9,7 +9,7 @@
             "desktop":  "afvaller.desktop"
         }
     },
-    "version": "0.7.1",
+    "version": "0.7.2",
     "maintainer": "stuiterveer <admin@stuiterveer.com>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
