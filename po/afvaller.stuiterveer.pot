@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 17:31+0000\n"
+"POT-Creation-Date: 2026-01-12 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,6 +79,14 @@ msgstr ""
 
 #: ../qml/Main.qml:35
 msgid "Droge herbruikbare materialen"
+msgstr ""
+
+#: ../qml/Main.qml:36
+msgid "Grofvuil"
+msgstr ""
+
+#: ../qml/Main.qml:37
+msgid "Textiel"
 msgstr ""
 
 #: ../qml/Settings.qml:19
