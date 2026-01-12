@@ -76,7 +76,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
         elif trashData[1].string == 'Kerstbomen':
             dataPoint['types'] = ['christmas_trees']
         elif trashData[1].string == 'Grofvuil':
-            dataPoint['types'] = 'bulky_waste'
+            dataPoint['types'] = ['bulky_waste']
         elif trashData[1].string == 'Textiel':
             dataPoint['types'] = ['textiles']
         else:
