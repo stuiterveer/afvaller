@@ -55,22 +55,10 @@ Page {
         delegate: wasteDelegate
     }
 
-    Label {
-        anchors {
-            top: header.bottom
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-        }
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-
+    ActivityIndicator {
         id: fetchingData
-
-        text: i18n.tr('Bezig met ophalen van data...')
-        textSize: Label.XLarge
-        wrapMode: Text.WordWrap
-
+        anchors.centerIn: parent
+        running: true
     }
 
     Python {
