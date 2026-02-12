@@ -9,6 +9,15 @@ Page {
     header: PageHeader {
         id: header
         title: 'Afvaller'
+
+        trailingActionBar.actions: [
+            Action {
+                iconName: 'settings'
+                text: i18n.tr('Instellingen')
+
+                onTriggered: pageStack.push(Qt.resolvedUrl('Settings.qml'))
+            }
+        ]
     }
 
     Component {
@@ -76,10 +85,5 @@ Page {
                 }
             })
         }
-
-        pageModel.append({
-            'name': i18n.tr('Instellingen'),
-            'file': 'Settings.qml'
-        })
     }
 }
