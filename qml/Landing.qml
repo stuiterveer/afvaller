@@ -23,9 +23,38 @@ Page {
     Component {
         id: pageDelegate
         ListItem {
+            height: units.gu(6)
+            width: parent.width
+            Icon {
+                id: pageIcon
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
+                height: units.gu(3)
+                width: units.gu(3)
+                name: icon
+                color: theme.palette.normal.baseText
+            }
             Label {
-                anchors.centerIn: parent
+                anchors {
+                    left: pageIcon.right
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
                 text: name
+            }
+            Icon {
+                anchors {
+                    right: parent.right
+                    rightMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
+                height: units.gu(2)
+                width: units.gu(2)
+                name: 'go-next'
+                color: theme.palette.normal.baseText
             }
             onClicked: {
                 var openedPage = pageStack.push(Qt.resolvedUrl(file))
@@ -74,12 +103,14 @@ Page {
                 if (returnValue.includes('calendar')) {
                     pageModel.append({
                         'name': i18n.tr('Afvalkalender'),
+                        'icon': 'calendar',
                         'file': 'Calendar.qml'
                     })
                 }
                 if (returnValue.includes('containers')) {
                     pageModel.append({
                         'name': i18n.tr('Afvalcontainers'),
+                        'icon': 'maps-app-symbolic',
                         'file': 'Containers.qml'
                     })
                 }
