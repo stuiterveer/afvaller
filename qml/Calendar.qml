@@ -14,8 +14,8 @@ Page {
         id: wasteDelegate
 
         ListItem {
-            height: txt.implicitHeight
-            width: txt.implicitWidth
+            height: units.gu(4)
+            width: parent.width
 
             divider {
                 visible: false
@@ -23,6 +23,11 @@ Page {
 
             Label {
                 id: txt
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
                 text: '<b>' + date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '') + ':</b> ' + typesString
                 Component.onCompleted: {
                     if (dateInfo == 'past')
