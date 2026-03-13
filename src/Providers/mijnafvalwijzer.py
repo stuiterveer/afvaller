@@ -27,12 +27,15 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
     url = 'https://mijnafvalwijzer.nl/nl/' + postalCode + '/' + houseNumber + '/' + (numberExtension if numberExtension is not None else '')
 
     try:
-        conn = urllib.request.urlopen(url)
+        headers = {}
+        headers['User-Agent'] = 'Mozilla/5.0'
+        req = urllib.request.Request(url, headers = headers)
+        resp = urllib.request.urlopen(req)
     except urllib.error.HTTPError as err:
         return err
 
-    returnData = conn.read()
-    conn.close()
+    returnData = resp.read()
+    resp.close()
 
     parser = BeautifulSoup(returnData, 'html.parser')
 
@@ -104,12 +107,15 @@ def validateAddress(postalCode, houseNumber, numberExtension):
     url = url.replace(" ", "%20")
 
     try:
-        conn = urllib.request.urlopen(url)
+        headers = {}
+        headers['User-Agent'] = 'Mozilla/5.0'
+        req = urllib.request.Request(url, headers = headers)
+        resp = urllib.request.urlopen(req)
     except urllib.error.HTTPError as err:
         return False
 
-    returnData = conn.read()
-    conn.close()
+    returnData = resp.read()
+    resp.close()
 
     returnDataJson = json.loads(returnData)
 
