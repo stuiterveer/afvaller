@@ -14,8 +14,8 @@ Page {
         id: wasteDelegate
 
         ListItem {
-            height: txt.implicitHeight
-            width: txt.implicitWidth
+            height: units.gu(4)
+            width: parent.width
 
             divider {
                 visible: false
@@ -23,6 +23,11 @@ Page {
 
             Label {
                 id: txt
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
                 text: '<b>' + date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '') + ':</b> ' + typesString
                 Component.onCompleted: {
                     if (dateInfo == 'past')
@@ -50,22 +55,10 @@ Page {
         delegate: wasteDelegate
     }
 
-    Label {
-        anchors {
-            top: header.bottom
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-        }
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-
+    ActivityIndicator {
         id: fetchingData
-
-        text: i18n.tr('Bezig met ophalen van data...')
-        textSize: Label.XLarge
-        wrapMode: Text.WordWrap
-
+        anchors.centerIn: parent
+        running: true
     }
 
     Python {

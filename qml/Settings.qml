@@ -62,7 +62,11 @@ Page {
 
             Label {
                 id: txt
-                anchors.verticalCenter: parent.verticalCenter
+                anchors {
+                    left: parent.left
+                    leftMargin: units.gu(2)
+                    verticalCenter: parent.verticalCenter
+                }
                 text: name
             }
 
@@ -81,14 +85,20 @@ Page {
     Column {
         anchors {
             top: header.bottom
+            topMargin: units.gu(2)
             bottom: parent.bottom
             left: parent.left
+            leftMargin: units.gu(2)
             right: parent.right
+            rightMargin: units.gu(2)
         }
+
+        spacing: units.gu(1)
 
         ComboButton {
             id: providerList
             expandedHeight: collapsedHeight + (listItemHeight * providerModel.count)
+            width: parent.width
             text: root.chosenProvider
 
             ListView {
@@ -119,7 +129,7 @@ Page {
             }
 
             height: units.gu(4)
-            width: parent.width / 4
+            width: units.gu(11)
 
             onTextChanged: addressInvalidError.visible = false
         }
@@ -135,7 +145,7 @@ Page {
             }
 
             height: units.gu(4)
-            width: parent.width / 8
+            width: units.gu(10)
 
             onTextChanged: addressInvalidError.visible = false
         }
@@ -147,7 +157,7 @@ Page {
 
             inputMethodHints: Qt.ImhNoPredictiveText
             height: units.gu(4)
-            width: parent.width / 8
+            width: units.gu(8)
 
             onTextChanged: addressInvalidError.visible = false
         }

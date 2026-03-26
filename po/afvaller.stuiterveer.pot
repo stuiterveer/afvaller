@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-12 12:23+0000\n"
+"POT-Creation-Date: 2026-02-12 18:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Calendar.qml:10 ../qml/Landing.qml:67
+#: ../qml/Calendar.qml:10 ../qml/Landing.qml:105
 msgid "Afvalkalender"
 msgstr ""
 
-#: ../qml/Calendar.qml:26
+#: ../qml/Calendar.qml:31
 msgid "vandaag"
 msgstr ""
 
-#: ../qml/Calendar.qml:65
-msgid "Bezig met ophalen van data..."
-msgstr ""
-
-#: ../qml/Calendar.qml:99
+#: ../qml/Calendar.qml:92
 msgid "Onbekend (%1)"
 msgstr ""
 
-#: ../qml/Containers.qml:12 ../qml/Landing.qml:73
+#: ../qml/Containers.qml:12 ../qml/Landing.qml:112
 msgid "Afvalcontainers"
 msgstr ""
 
-#: ../qml/Landing.qml:81 ../qml/Settings.qml:14
+#: ../qml/Landing.qml:16 ../qml/Settings.qml:14
 msgid "Instellingen"
 msgstr ""
 
@@ -93,7 +89,7 @@ msgstr ""
 msgid "Opslaan"
 msgstr ""
 
-#: ../qml/Settings.qml:164
+#: ../qml/Settings.qml:174
 msgid ""
 "Adres wordt niet herkend door %1.\n"
 "Controleer of het adres en de gekozen afvalverwerker juist zijn."
