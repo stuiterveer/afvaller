@@ -104,6 +104,8 @@ Page {
             model: containerModel
             delegate: pointDelegate
         }
+
+        onCopyrightLinkActivated: Qt.openUrlExternally(link)
     }
 
     Python {
