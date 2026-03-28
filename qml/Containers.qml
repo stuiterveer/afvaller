@@ -23,6 +23,14 @@ Page {
             name: "osm.mapping.custom.host"
             value: "https://tile.openstreetmap.org/"
         }
+        PluginParameter {
+            name: 'osm.mapping.custom.mapcopyright'
+            value: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a>'
+        }
+        PluginParameter {
+            name: 'osm.mapping.custom.datacopyright'
+            value: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }
     }
 
     ListModel {
