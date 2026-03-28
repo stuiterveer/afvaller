@@ -116,6 +116,8 @@ Page {
                 }
                 delegate: providerDelegate
             }
+
+            onClicked: providerList.expanded = !providerList.expanded
         }
 
         TextField {

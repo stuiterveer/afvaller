@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-28 20:14+0000\n"
+"POT-Creation-Date: 2026-03-28 21:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Calendar.qml:10 ../qml/Landing.qml:112
+#: ../qml/Calendar.qml:10 ../qml/Landing.qml:107
 msgid "Afvalkalender"
 msgstr ""
 
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Onbekend (%1)"
 msgstr ""
 
-#: ../qml/Containers.qml:12 ../qml/Landing.qml:119
+#: ../qml/Containers.qml:12 ../qml/Landing.qml:114
 msgid "Afvalcontainers"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Opslaan"
 msgstr ""
 
-#: ../qml/Settings.qml:174
+#: ../qml/Settings.qml:176
 msgid ""
 "Adres wordt niet herkend door %1.\n"
 "Controleer of het adres en de gekozen afvalverwerker juist zijn."
