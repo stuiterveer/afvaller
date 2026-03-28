@@ -15,7 +15,10 @@ Page {
                 iconName: 'settings'
                 text: i18n.tr('Instellingen')
 
-                onTriggered: pageStack.push(Qt.resolvedUrl('Settings.qml'))
+                onTriggered: {
+                    var openedPage = pageStack.push(Qt.resolvedUrl('Settings.qml'))
+                    openedPage.settingsChanged.connect(loadMenu)
+                }
             }
         ]
     }
@@ -57,8 +60,7 @@ Page {
                 color: theme.palette.normal.baseText
             }
             onClicked: {
-                var openedPage = pageStack.push(Qt.resolvedUrl(file))
-                openedPage.settingsChanged.connect(loadMenu)
+                pageStack.push(Qt.resolvedUrl(file))
             }
         }
     }
