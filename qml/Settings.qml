@@ -64,10 +64,24 @@ Page {
                 id: txt
                 anchors {
                     left: parent.left
+                    right: parent.right
                     leftMargin: units.gu(2)
                     verticalCenter: parent.verticalCenter
                 }
                 text: name
+            }
+
+            Icon {
+                anchors {
+                    right: parent.right
+                    rightMargin: txt.anchors.leftMargin
+                    top: txt.top
+                    bottom: txt.bottom
+                }
+                height: txt.height
+                width: height
+                visible: providerList.text == txt.text
+                name: 'tick'
             }
 
             onClicked: {
