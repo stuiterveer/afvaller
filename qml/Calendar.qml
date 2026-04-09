@@ -28,7 +28,7 @@ Page {
                     leftMargin: units.gu(2)
                     verticalCenter: parent.verticalCenter
                 }
-                text: '<b>' + date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '') + ':</b> ' + typesString
+                text: '<b>' + date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '') + ':</b> ' + (type in trashLut ? trashLut[type] : i18n.tr('Onbekend (%1)').arg(type))
                 Component.onCompleted: {
                     if (dateInfo == 'past')
                     {
@@ -82,21 +82,6 @@ Page {
                     python.call(root.providers[root.chosenProvider] + '.getCalendar', [root.addressPostalCode, root.addressNumber, root.addressExtension, availableYears[y].toString()], function(returnValue) {
                         for (var i = 0; i < returnValue.length; i++)
                         {
-                            var typesTrans = []
-                            for (var j = 0; j < returnValue[i]['types'].length; j++)
-                            {
-                                if (returnValue[i]['types'][j] in trashLut){
-                                    typesTrans.push(trashLut[returnValue[i]['types'][j]])
-                                } else {
-                                    // Should not happen, but show unknown values to user for debugging and so it can still be added
-                                    typesTrans.push(i18n.tr('Onbekend (%1)').arg(returnValue[i]['types'][j]))
-                                }
-                                if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
-                                {
-                                    currentIndex = i
-                                }
-                            }
-                            returnValue[i]['typesString'] = typesTrans.join(', ')
                             wasteModel.append(returnValue[i])
                         }
 

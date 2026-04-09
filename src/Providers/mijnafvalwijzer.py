@@ -61,29 +61,29 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             dataPoint['dateInfo'] = 'future'
 
         if trashData[1].string == 'Restafval':
-            dataPoint['types'] = ['residual_waste']
+            dataPoint['type'] = 'residual_waste'
         elif trashData[1].string == 'MD':
-            dataPoint['types'] = ['md']
+            dataPoint['type'] = 'md'
         elif trashData[1].string == 'Plastic en kunststof' or trashData[1].string == 'Plastic':
-            dataPoint['types'] = ['plastic']
+            dataPoint['type'] = 'plastic'
         elif trashData[1].string == 'Papier en karton' or trashData[1].string == 'Oud papier':
-            dataPoint['types'] = ['paper']
+            dataPoint['type'] = 'paper'
         elif trashData[1].string == 'Groente, Fruit en Tuinafval' or trashData[1].string == 'GFT-afval':
-            dataPoint['types'] = ['gft']
+            dataPoint['type'] = 'gft'
         elif trashData[1].string == 'Mobiel Scheidingsstation' or trashData[1].string == 'Takkenroute':
-            dataPoint['types'] = ['pruning_waste']
+            dataPoint['type'] = 'pruning_waste'
         elif trashData[1].string == 'Droge herbruikbare materialen':
-            dataPoint['types'] = ['dry_recyclables']
+            dataPoint['type'] = 'dry_recyclables'
         elif trashData[1].string == 'Plastic, Metalen en Drankkartons':
-            dataPoint['types'] = ['pmd']
+            dataPoint['type'] = 'pmd'
         elif trashData[1].string == 'Kerstbomen':
-            dataPoint['types'] = ['christmas_trees']
+            dataPoint['type'] = 'christmas_trees'
         elif trashData[1].string == 'Grofvuil':
-            dataPoint['types'] = ['bulky_waste']
+            dataPoint['type'] = 'bulky_waste'
         elif trashData[1].string == 'Textiel':
-            dataPoint['types'] = ['textiles']
+            dataPoint['type'] = 'textiles'
         else:
-            dataPoint['types'] = [trashData[1].string]
+            dataPoint['type'] = trashData[1].string
 
         returnData.append(dataPoint)
 

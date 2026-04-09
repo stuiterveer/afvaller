@@ -39,20 +39,14 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             elif collectionDate > today:
                 data[i]['dateInfo'] = 'future'
 
-            data[i]['types'] = []
             if data[i]['wasteType']['code'] == 'PMD':
-                data[i]['types'].append('pmd')
+                data[i]['type'] = 'pmd'
             elif data[i]['wasteType']['code'] == 'GFT':
-                data[i]['types'].append('gft')
+                data[i]['type'] = 'gft'
             elif data[i]['wasteType']['code'] == 'PAP':
-                data[i]['types'].append('paper')
+                data[i]['type'] = 'paper'
             elif data[i]['wasteType']['code'] == 'RST':
-                data[i]['types'].append('residual_waste')
-
-            if i != len(data) - 1:
-                if data[i]['date'] == data[i+1]['date']:
-                    data[i]['types'].append(data[i+1]['type'])
-                    del data[i+1]
+                data[i]['type'] = 'residual_waste'
         else:
             del data[i]
 

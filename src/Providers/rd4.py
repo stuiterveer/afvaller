@@ -32,9 +32,9 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
 
     data = json.loads(returnData)['data']['items'][0]
 
-    i = len(data) - 1
+    i = 0
     today = date.today()
-    while i >= 0:
+    while i < len(data):
         dateArr = data[i]['date'].split('-')
         collectionDate = date(int(dateArr[0]), int(dateArr[1]), int(dateArr[2]))
 
@@ -44,15 +44,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             data[i]['dateInfo'] = 'today'
         elif collectionDate > today:
             data[i]['dateInfo'] = 'future'
-
-        data[i]['types'] = []
-        data[i]['types'].append(data[i]['type'])
-
-        if i != len(data) - 1:
-            if data[i]['date'] == data[i+1]['date']:
-                data[i]['types'].append(data[i+1]['type'])
-                del data[i+1]
-        i -= 1
+        i += 1
 
     return data
 
