@@ -111,7 +111,7 @@ Page {
 
         ComboButton {
             id: providerList
-            expandedHeight: collapsedHeight + (listItemHeight * providerModel.count)
+            expandedHeight: collapsedHeight + (listItemHeight * Math.min(5, providerModel.count))
             width: parent.width
             text: root.chosenProvider
 
