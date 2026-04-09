@@ -54,7 +54,7 @@ The function's return data should be an array, with each value in the array repr
 {
     'date': ...,
     'dateInfo': ...,
-    'types': [...]
+    'type': ...
 }
 ```
 
@@ -64,7 +64,7 @@ Here's how each value in the object is formatted:
     - `'today'` if it falls on the same date as today.
     - `'past'` if the date has already passed.
     - `'future`' if the date is at any point in the future.
-- `types`: An array containing all trash types that are picked up on that day. This means that multiple pickups on the same day should be combined into the same object instead of providing multiple objects for the same date. The possible values are the keys of the `trashLut` variable in `qml/Main.qml`.
+- `type`: A single trash types that is picked up on that day. If multiple trash types are picked up that day, then another entry for that date with the other trash type should be added to the return value. The possible values are the keys of the `trashLut` variable in `qml/Main.qml`.
 
 Any additional data in this object will be disregarded.
 
