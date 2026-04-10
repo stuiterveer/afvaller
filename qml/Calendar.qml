@@ -83,6 +83,11 @@ Page {
                         for (var i = 0; i < returnValue.length; i++)
                         {
                             wasteModel.append(returnValue[i])
+
+                            if (returnValue[i]['dateInfo'] != 'past' && currentIndex == 0)
+                            {
+                            currentIndex = i
+                            }
                         }
 
                         trashView.positionViewAtIndex(currentIndex, ListView.Center)
