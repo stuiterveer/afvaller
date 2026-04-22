@@ -14,27 +14,61 @@ Page {
         id: wasteDelegate
 
         ListItem {
-            height: units.gu(4)
+            height: units.gu(9)
             width: parent.width
 
-            divider {
-                visible: false
-            }
+            enabled: dateInfo !== 'past'
 
-            Label {
-                id: txt
+            LomiriShape {
+                id: iconShape
+
+                height: units.gu(7)
+                width: units.gu(7)
+
                 anchors {
                     left: parent.left
                     leftMargin: units.gu(2)
                     verticalCenter: parent.verticalCenter
                 }
-                text: '<b>' + date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '') + ':</b> ' + (type in trashLut ? trashLut[type] : i18n.tr('Onbekend (%1)').arg(type))
-                Component.onCompleted: {
-                    if (dateInfo == 'past')
-                    {
-                        color = '#888888'
-                    }
+
+                source: Image {
+                    source: 'img/' + type + '.svg'
                 }
+            }
+
+            Label {
+                id: dateLabel
+
+                width: parent.width - iconShape.width - units.gu(5)
+
+                anchors {
+                    left: iconShape.right
+                    leftMargin: units.gu(1)
+                    top: parent.top
+                    topMargin: units.gu(2)
+                }
+
+                text: date + (dateInfo == 'today' ? ' (' + i18n.tr('vandaag') + ')' : '')
+                
+                elide: Text.ElideRight
+                font.bold: true
+            }
+
+            Label {
+                id: typeLabel
+
+                width: parent.width - iconShape.width - units.gu(5)
+
+                anchors {
+                    left: iconShape.right
+                    leftMargin: units.gu(1)
+                    top: dateLabel.bottom
+                    topMargin: units.gu(0.5)
+                }
+
+                text: (type in trashLut ? trashLut[type] : i18n.tr('Onbekend (%1)').arg(type))
+
+                elide: Text.ElideRight
             }
         }
     }

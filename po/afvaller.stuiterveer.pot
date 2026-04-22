@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-09 20:03+0000\n"
+"POT-Creation-Date: 2026-04-22 19:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,12 @@ msgstr ""
 msgid "Afvalkalender"
 msgstr ""
 
-#: ../qml/Calendar.qml:31
-msgid "Onbekend (%1)"
+#: ../qml/Calendar.qml:51
+msgid "vandaag"
 msgstr ""
 
-#: ../qml/Calendar.qml:31
-msgid "vandaag"
+#: ../qml/Calendar.qml:69
+msgid "Onbekend (%1)"
 msgstr ""
 
 #: ../qml/Containers.qml:12 ../qml/Landing.qml:114
