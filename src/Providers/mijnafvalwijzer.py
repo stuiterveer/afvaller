@@ -68,13 +68,13 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             dataPoint['type'] = 'plastic'
         elif trashData[1].string == 'Papier en karton' or trashData[1].string == 'Oud papier':
             dataPoint['type'] = 'paper'
-        elif trashData[1].string == 'Groente, Fruit en Tuinafval' or trashData[1].string == 'GFT-afval':
+        elif trashData[1].string == 'Groente, Fruit en Tuinafval' or trashData[1].string == 'GFT-afval' or trashData[1].string == 'Groente, fruit, tuinafval en etensresten':
             dataPoint['type'] = 'gft'
         elif trashData[1].string == 'Mobiel Scheidingsstation' or trashData[1].string == 'Takkenroute':
             dataPoint['type'] = 'pruning_waste'
         elif trashData[1].string == 'Droge herbruikbare materialen':
             dataPoint['type'] = 'dry_recyclables'
-        elif trashData[1].string == 'Plastic, Metalen en Drankkartons':
+        elif trashData[1].string == 'Plastic, Metalen en Drankkartons' or trashData[1].string == 'Plastic, Blik en Drinkpakken' or trashData[1].string == 'Plastic verpakkingen, blik en drinkpakken':
             dataPoint['type'] = 'pmd'
         elif trashData[1].string == 'Kerstbomen':
             dataPoint['type'] = 'christmas_trees'
