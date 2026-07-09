@@ -32,7 +32,7 @@ Page {
                 }
 
                 source: Image {
-                    source: 'img/' + type + '.svg'
+                    source: 'img/' + (type in trashIconLut ? trashIconLut[type] : 'residual_waste') + '.svg'
                 }
             }
 
@@ -66,7 +66,7 @@ Page {
                     topMargin: units.gu(0.5)
                 }
 
-                text: (type in trashLut ? trashLut[type] : i18n.tr('Onbekend (%1)').arg(type))
+                text: type
 
                 elide: Text.ElideRight
             }
@@ -105,6 +105,7 @@ Page {
                 console.log('module ' + root.providers[root.chosenProvider] + ' imported');
             });
 
+            // Are these used?
             var d = new Date()
             var currentYear = d.getFullYear()
 
