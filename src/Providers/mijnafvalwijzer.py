@@ -60,30 +60,7 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
         elif collectionDate > today:
             dataPoint['dateInfo'] = 'future'
 
-        if trashData[1].string == 'Restafval':
-            dataPoint['type'] = 'residual_waste'
-        elif trashData[1].string == 'MD':
-            dataPoint['type'] = 'md'
-        elif trashData[1].string == 'Plastic en kunststof' or trashData[1].string == 'Plastic':
-            dataPoint['type'] = 'plastic'
-        elif trashData[1].string == 'Papier en karton' or trashData[1].string == 'Oud papier':
-            dataPoint['type'] = 'paper'
-        elif trashData[1].string == 'Groente, Fruit en Tuinafval' or trashData[1].string == 'GFT-afval' or trashData[1].string == 'Groente, fruit, tuinafval en etensresten':
-            dataPoint['type'] = 'gft'
-        elif trashData[1].string == 'Mobiel Scheidingsstation' or trashData[1].string == 'Takkenroute':
-            dataPoint['type'] = 'pruning_waste'
-        elif trashData[1].string == 'Droge herbruikbare materialen':
-            dataPoint['type'] = 'dry_recyclables'
-        elif trashData[1].string == 'Plastic, Metalen en Drankkartons' or trashData[1].string == 'Plastic, Blik en Drinkpakken' or trashData[1].string == 'Plastic verpakkingen, blik en drinkpakken':
-            dataPoint['type'] = 'pmd'
-        elif trashData[1].string == 'Kerstbomen':
-            dataPoint['type'] = 'christmas_trees'
-        elif trashData[1].string == 'Grofvuil':
-            dataPoint['type'] = 'bulky_waste'
-        elif trashData[1].string == 'Textiel':
-            dataPoint['type'] = 'textiles'
-        else:
-            dataPoint['type'] = trashData[1].string
+        dataPoint['type'] = trashData[1].string
 
         returnData.append(dataPoint)
 
