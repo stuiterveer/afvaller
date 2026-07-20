@@ -22,19 +22,33 @@ MainView {
     property string addressExtension: ''
     property string chosenProvider: ''
 
-    readonly property var trashLut: {
-        'residual_waste': i18n.tr('Restafval'),
-        'gft': i18n.tr('GFT'),
-        'paper': i18n.tr('Papier'),
-        'pruning_waste': i18n.tr('Snoeiafval'),
-        'pmd': i18n.tr('PMD'),
-        'best_bag': i18n.tr('BEST-tas'),
-        'christmas_trees': i18n.tr('Kerstbomen'),
-        'plastic': i18n.tr('Plastic'),
-        'md': i18n.tr('Metalen en Drankkartons'),
-        'dry_recyclables': i18n.tr('Droge herbruikbare materialen'),
-        'bulky_waste': i18n.tr('Grofvuil'),
-        'textiles': i18n.tr('Textiel')
+    // Lookup table for trash icons
+    // Include all trash types returned by getCalendar()
+    readonly property var trashIconLut: {
+         'Restafval': 'residual_waste',
+         'MD': 'md',
+         'Plastic en kunststof': 'plastic',
+         'Plastic': 'plastic',
+         'Papier en karton': 'paper',
+         'Oud papier': 'paper',
+         'Papierafval': 'paper',
+         'Oud papier en karton': 'paper',
+         'Groente, Fruit en Tuinafval': 'gft',
+         'GFT-afval': 'gft',
+         'Groente, fruit, tuinafval en etensresten': 'gft',
+         'GFT en etensresten': 'gft',
+         'Mobiel Scheidingsstation': 'pruning_waste',
+         'Takkenroute': 'pruning_waste',
+         'Snoeiafval op afspraak': 'pruning_waste',
+         'Droge herbruikbare materialen': 'dry_recyclables',
+         'Plastic, Metalen en Drankkartons': 'pmd',
+         'Plastic, Blik en Drinkpakken': 'pmd',
+         'Plastic verpakkingen, blik en drinkpakken': 'pmd',
+         'PMD-verpakkingen': 'pmd',
+         'Kerstbomen': 'christmas_trees',
+         'Grofvuil': 'bulky_waste',
+         'Textiel': 'textiles',
+         'BEST-tas': 'best_bag'
     }
 
     property var containerInfo: {

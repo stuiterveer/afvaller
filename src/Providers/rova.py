@@ -3,6 +3,14 @@ import urllib.error
 import json
 from datetime import date, datetime
 
+# Lookup table for trash types
+RovaTrashTypeLUT = {
+'RST':'Restafval',
+'GFT':'GFT en etensresten',
+'PAP':'Oud papier en karton',
+'PMD':'PMD-verpakkingen'
+}
+
 def getCapabilities():
     return ['calendar']
 
@@ -39,14 +47,8 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             elif collectionDate > today:
                 data[i]['dateInfo'] = 'future'
 
-            if data[i]['wasteType']['code'] == 'PMD':
-                data[i]['type'] = 'pmd'
-            elif data[i]['wasteType']['code'] == 'GFT':
-                data[i]['type'] = 'gft'
-            elif data[i]['wasteType']['code'] == 'PAP':
-                data[i]['type'] = 'paper'
-            elif data[i]['wasteType']['code'] == 'RST':
-                data[i]['type'] = 'residual_waste'
+            if data[i]['wasteType']['code'] in RovaTrashTypeLUT:
+                data[i]['type'] = RovaTrashTypeLUT[data[i]['wasteType']['code']]
         else:
             del data[i]
 

@@ -3,6 +3,18 @@ import urllib.error
 import json
 from datetime import date, datetime
 
+# Lookup table for trash types https://mijn.rd4.nl/_nuxt/d56e636.js
+RD4TrashTypeLUT = {
+'residual_waste':'Restafval',
+'gft':'GFT en etensresten',
+'paper':'Papierafval',
+'pruning_waste':'Snoeiafval op afspraak',
+'pmd':'PMD-verpakkingen',
+'best_bag':'BEST-tas',
+'christmas_trees':'Kerstbomen',
+'textile':'Textiel'
+}
+
 def getCapabilities():
     return ['calendar', 'containers']
 
@@ -44,6 +56,10 @@ def getCalendar(postalCode, houseNumber, numberExtension, year):
             data[i]['dateInfo'] = 'today'
         elif collectionDate > today:
             data[i]['dateInfo'] = 'future'
+
+        if data[i]['type'] in RD4TrashTypeLUT:
+            data[i]['type'] = RD4TrashTypeLUT[data[i]['type']]
+
         i += 1
 
     return data
