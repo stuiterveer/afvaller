@@ -65,4 +65,15 @@ MainView {
         property alias provider: root.chosenProvider
         property alias providerData: root.providerData
     }
+
+    // Settings for reminders
+    Settings {
+        id: reminderSettings
+        category: 'Reminders'
+    }
+
+    // Trash types present in the data from a provider
+    // Initialized in Calendar.qml, used by reminderSettings
+    property var foundTrashTypes: {}
+
 }
