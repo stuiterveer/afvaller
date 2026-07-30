@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: afvaller.stuiterveer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-22 19:26+0000\n"
+"POT-Creation-Date: 2026-07-30 14:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/Calendar.qml:10 ../qml/Landing.qml:107
+#: ../qml/Calendar.qml:18 ../qml/Landing.qml:107
 msgid "Afvalkalender"
 msgstr ""
 
-#: ../qml/Calendar.qml:51
+#: ../qml/Calendar.qml:33 ../qml/Landing.qml:16 ../qml/Settings.qml:14
+msgid "Instellingen"
+msgstr ""
+
+#: ../qml/Calendar.qml:80
 msgid "vandaag"
 msgstr ""
 
-#: ../qml/Calendar.qml:69
+#: ../qml/Calendar.qml:98
 msgid "Onbekend (%1)"
 msgstr ""
 
 #: ../qml/Containers.qml:12 ../qml/Landing.qml:114
 msgid "Afvalcontainers"
-msgstr ""
-
-#: ../qml/Landing.qml:16 ../qml/Settings.qml:14
-msgid "Instellingen"
 msgstr ""
 
 #: ../qml/Main.qml:26
@@ -85,11 +85,20 @@ msgstr ""
 msgid "Textiel"
 msgstr ""
 
+#: ../qml/SetReminderType.qml:20
+msgid "Herinnering voor "
+msgstr ""
+
+#: ../qml/SetReminderType.qml:25 ../qml/SetReminders.qml:19
 #: ../qml/Settings.qml:19
 msgid "Opslaan"
 msgstr ""
 
-#: ../qml/Settings.qml:190
+#: ../qml/SetReminders.qml:14
+msgid "Set Reminders"
+msgstr ""
+
+#: ../qml/Settings.qml:189
 msgid ""
 "Adres wordt niet herkend door %1.\n"
 "Controleer of het adres en de gekozen afvalverwerker juist zijn."
